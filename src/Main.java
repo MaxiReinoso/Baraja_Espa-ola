@@ -13,6 +13,7 @@ public class Main {
         // recorremos la baraja
         baraja.recorrerBaraja();
 
+        System.out.println("---------SACAMOS DOS CARTAS PARA VER EL METDO");
         //vemos la carta siguiente disponible
         baraja.sacarSiguiente();
         baraja.recorrerBaraja();
@@ -27,20 +28,20 @@ public class Main {
         mesa.agregarJugador(j3);
         mesa.agregarJugador(j4);
 
-        System.out.println("REepartimos las cartas a todos los jugadores QUE esten en mesa");
+        System.out.println("-----------------REepartimos las cartas a todos los jugadores QUE esten en mesa");
         // Repartimos de forma dinámica según lo que ingresó el usuario
         baraja.repartirMano(mesa.getListaJugadores(), 4);
 
         // • MOSTRAR LAS CARTAS QUE YA HAN SEAN REPARTIDAS (Historial)
-        System.out.println();
+        System.out.println("---------------CARTAS YA REPARTIDAS");
         baraja.recorrerCartasSacadas();
 
         // • MOSTRAR LAS CARTAS QUE PERMANECEN DISPONIBLES EN LA BARAJA
-        System.out.println();
+        System.out.println("------------------CARTAS YA REPARTIDAS");
         baraja.recorrerBaraja();
 
         // Consultamos la cantidad final
-        System.out.println("Las cartas que quedaron son: ");
+        System.out.println("---------------Las cartas que quedaron son: ");
         baraja.recorrerBaraja();
     }
 }
