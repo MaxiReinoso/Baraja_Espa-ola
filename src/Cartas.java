@@ -1,4 +1,4 @@
-public class Cartas {
+    public class Cartas {
     public String palo;
     public int numero;
 

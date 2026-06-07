@@ -7,15 +7,20 @@ public class Main {
         Baraja baraja = new Baraja();
         Mesa mesa = new Mesa();
 
-        // barajeamos
+        // Barajeamos
         System.out.println("\n-> Barajando el mazo...");
         baraja.barajar();
-        // recorremos la baraja
+
+        // Recorremos la baraja
         baraja.recorrerBaraja();
 
-        System.out.println("---------SACAMOS DOS CARTAS PARA VER EL METDO");
-        //vemos la carta siguiente disponible
+        System.out.println("\n---------SACAMOS DOS CARTAS PARA VER EL MÉTODO");
+
+        //Vemos la carta siguiente disponible
         baraja.sacarSiguiente();
+        baraja.sacarSiguiente();
+
+        //Recorremos de nuevo la baraja (Ahora ya no van a estar las cartas que sacamos)
         baraja.recorrerBaraja();
 
         // Creamos un par de jugadores de prueba y los sentamos en la mesa
@@ -28,20 +33,17 @@ public class Main {
         mesa.agregarJugador(j3);
         mesa.agregarJugador(j4);
 
-        System.out.println("-----------------REepartimos las cartas a todos los jugadores QUE esten en mesa");
+        System.out.println("\n-----------------Repartimos las cartas a todos los jugadores que estén en mesa");
+
         // Repartimos de forma dinámica según lo que ingresó el usuario
         baraja.repartirMano(mesa.getListaJugadores(), 4);
 
-        // • MOSTRAR LAS CARTAS QUE YA HAN SEAN REPARTIDAS (Historial)
-        System.out.println("---------------CARTAS YA REPARTIDAS");
+        // MOSTRAR LAS CARTAS QUE YA HAN SIDO REPARTIDAS (Historial)
+        System.out.println("\n---------------CARTAS YA REPARTIDAS");
         baraja.recorrerCartasSacadas();
 
-        // • MOSTRAR LAS CARTAS QUE PERMANECEN DISPONIBLES EN LA BARAJA
-        System.out.println("------------------CARTAS YA REPARTIDAS");
-        baraja.recorrerBaraja();
-
-        // Consultamos la cantidad final
-        System.out.println("---------------Las cartas que quedaron son: ");
+        // Consultamos las cartas que aún quedan en la baraja
+        System.out.println("\n---------------Las cartas que quedaron son: ");
         baraja.recorrerBaraja();
     }
 }
