@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class CasitaRobada extends Juego{
 
-    @Override
-    public void setNombre(String nombre) {
-        super.setNombre("Casita Robada");
+    //Asignamos el nombre y las reglas de manera predefinida al juego
+
+    public CasitaRobada() {
+        setNombre("Casita Robada");
+        setReglas(new Reglas_Casita_Robada());
     }
-
-
 
 }

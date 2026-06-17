@@ -16,7 +16,7 @@ public class Main {
 
         casitaRobada.setBaraja(baraja);
 
-        System.out.println("Poner acá el main después lol");
+        casitaRobada.mostrarJuego();
 
     }
 

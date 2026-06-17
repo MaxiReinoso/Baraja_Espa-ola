@@ -6,8 +6,6 @@ import java.util.ArrayList;
 
 public class Mesa {
 
-    private Cas
-
     private ArrayList<Jugador> listaJugadores;
 
     public Mesa() {

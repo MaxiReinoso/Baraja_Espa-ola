@@ -1,7 +1,8 @@
 package Parte02;
 
-public class Reglas_Casita_Robada {
+public class Reglas_Casita_Robada extends ReglasJuego{
 
+    @Override
     public void mostrarReglas(){
         System.out.println("---- REGLAS | CASITA ROBADA ----\n");
         System.out.println("--------------------------------\n");

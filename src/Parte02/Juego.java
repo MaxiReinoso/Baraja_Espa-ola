@@ -4,6 +4,8 @@ import Parte01.*;
 
 public abstract class Juego {
 
+    //Atributos del juego
+
     protected Jugador ganador;
 
     protected Baraja baraja;
@@ -13,6 +15,8 @@ public abstract class Juego {
     protected String nombre;
 
     protected ReglasJuego reglas;
+
+    //Setters
 
     public void setGanador(Jugador ganador) {
         this.ganador = ganador;
@@ -34,7 +38,9 @@ public abstract class Juego {
         this.mesa = mesa;
     }
 
-    public void mostrarJuego(String nombre, ReglasJuego reglas){
+    //Muestra el juego
+
+    public void mostrarJuego(){
 
         System.out.println("En esta mesa se está jugando: " + this.nombre);
 
