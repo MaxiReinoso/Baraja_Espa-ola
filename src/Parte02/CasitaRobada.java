@@ -11,4 +11,18 @@ public class CasitaRobada extends Juego{
         setReglas(new Reglas_Casita_Robada());
     }
 
+    public void jugar(){
+
+        if ((mesa.getListaJugadores().size()) < 2){
+
+            System.out.println("Necesita 2 o más jugadores para comenzar el juego.");
+
+        } else{
+
+            
+
+        }
+
+    }
+
 }
