@@ -6,4 +6,4 @@ El juego elegido por nuestro grupo es la "Casita Robada"
 Leonel Fachinelli,
 Maximiliano Reinoso,
 Xavier Pappalardo,
-Lautaro Gómez 
+Lautaro Gómez
