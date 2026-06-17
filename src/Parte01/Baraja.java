@@ -1,3 +1,5 @@
+package Parte01;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -30,14 +32,14 @@ public class Baraja {
     }
 
     public void recorrerBaraja(){
-        System.out.println("\nCartas en el mazo:");
+        System.out.println("\nParte01.Cartas en el mazo:");
         for (Cartas carta : listaDeCartas) {
             System.out.println("La carta es el "+ carta.getNumero() +" de "+carta.getPalo());
         }
     }
 
     public void recorrerCartasSacadas(){
-        System.out.println("\nCartas sacadas:");
+        System.out.println("\nParte01.Cartas sacadas:");
         if(cartasSacadas.isEmpty()) {
             System.out.println("todavia no se sacan cartitas");
         }

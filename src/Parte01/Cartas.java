@@ -1,4 +1,6 @@
-    public class Cartas {
+package Parte01;
+
+public class Cartas {
     public String palo;
     public int numero;
 
