@@ -81,5 +81,8 @@ public class Baraja {
         this.listaDeCartas.addAll(cartasDevueltas);
         this.cartasSacadas.clear();
     }
+    public boolean isVacia() {
+        return this.listaDeCartas.isEmpty();
+    }
 
 }

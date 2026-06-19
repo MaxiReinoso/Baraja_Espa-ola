@@ -13,26 +13,35 @@ public class CasitaRobada extends Juego{
     }
 
     public void jugar(int turnos){
-
-        if ((mesa.getListaJugadores().size()) < 2){
-
+        if (mesa.getListaJugadores().size() < 2) {
             System.out.println("Necesita 2 o más jugadores para comenzar el juego.");
-
-        } else{
-
-            for (int i = 0; i < turnos; i++) {
-
-                for (Jugador jugador: mesa.getListaJugadores()){
-
-                    this.turno(jugador);
-
-                }
-
-            }
-
+            return;
         }
+        for (int i = 0; i < 4; i++) {
+            Cartas carta = baraja.sacarSiguiente();
+            if (carta != null) {
+                mesa.getCartasEnSuelo().add(carta);
+            }
+        }
+        baraja.repartirMano(mesa.getListaJugadores(), 3);
 
-    }
+        for (int i = 0; i < turnos; i++) {
+            boolean todasLasManosVacias = true;
+            for (Jugador j : mesa.getListaJugadores()) {
+                if (!j.mazo.isEmpty()) {
+                    todasLasManosVacias = false;
+                    break;
+                }
+            }
+            if (todasLasManosVacias && !baraja.isVacia()) {
+                System.out.println("\n--- Las manos se vaciaron. Repartiendo 3 cartas nuevas a todos ---");
+                baraja.repartirMano(mesa.getListaJugadores(), 3);
+            }
+            for (Jugador jugador : mesa.getListaJugadores()) {
+                this.turno(jugador);
+            }
+        }
+        System.out.println("\nPartida finalizada. ¡A contar las casitas!");}
 
     public void turno(Jugador jugador) {
         ArrayList<Cartas> mano = jugador.mazo;
@@ -128,7 +137,6 @@ public class CasitaRobada extends Juego{
         ladron.getCasita().addAll(victima.getCasita());
         victima.getCasita().clear();
     }
-
     private void ejecutarRoboMesa(Jugador jugador, ArrayList<Cartas> suelo, ArrayList<Integer> indicesCoincidentes, Cartas cartaJugada) {
         Scanner sc = new Scanner(System.in);
         int indiceRemover = indicesCoincidentes.get(0);
