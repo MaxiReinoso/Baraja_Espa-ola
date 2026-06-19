@@ -25,7 +25,7 @@ public class Main {
 
         // Creamos un par de jugadores de prueba y los sentamos en la mesa
         Jugador j1 = new Jugador("Leoo");
-        Jugador j2 = new Jugador("Maxi dou");
+        Jugador j2 = new Jugador("Maxi Dou");
         Jugador j3 = new Jugador("Chadvier");
         Jugador j4 = new Jugador("Lauti God");
         mesa.agregarJugador(j1);
