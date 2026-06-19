@@ -45,13 +45,20 @@ public class CasitaRobada extends Juego{
             }
         }
         this.ganador = this.elegirGanador(mesa);
-        System.out.println("EL GANADOR DE LA PARTIDA ES EL JUGADOR: " + this.ganador.getNombre());
+        if (this.ganador == null){
+            return;
+        } else {
+            System.out.println("EL GANADOR DE LA PARTIDA ES EL JUGADOR: " + this.ganador.getNombre());
+        }
     }
     public Jugador elegirGanador(Mesa mesa){
-        Jugador ganador = mesa.getListaJugadores().getFirst();
+        Jugador ganador = mesa.getListaJugadores().get(0);
         for (Jugador jugador: mesa.getListaJugadores()){
             if (jugador.getCasita().size() > ganador.getCasita().size()){
                 ganador = jugador;
+            } else if ((jugador.getCasita().size() == ganador.getCasita().size()) && jugador == mesa.getListaJugadores().getLast()) {
+                System.out.println("EL RESULTADO FINAL ES UN EMPATE");
+                return null;
             }
         }
         return ganador;
