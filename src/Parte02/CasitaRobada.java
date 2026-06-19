@@ -46,7 +46,6 @@ public class CasitaRobada extends Juego{
             }
         }
         System.out.println("\nPartida finalizada. ¡A contar las casitas!");}
-
     public void turno(Jugador jugador) {
         ArrayList<Cartas> mano = jugador.mazo;
 
@@ -57,7 +56,31 @@ public class CasitaRobada extends Juego{
 
         System.out.println("\n --------------------------------");
         System.out.println("Turno de: " + jugador.getNombre().toUpperCase());
+        //mostramos las cartas de la mesa
+        System.out.println("\n Las cartas de la mesa son: ");
+        ArrayList<Cartas> suelo = mesa.getCartasEnSuelo();
+        if(suelo.isEmpty()){
+            System.out.println("[El suelo esta vacio ]");
+        }else{
+            for(Cartas c : suelo){
+                System.out.println("[" + c + "] ");
+            }
+            System.out.println();
+        }
 
+        //Mostramos la carta de arriba de las casitas
+        System.out.println("\n--- ESTADO DE LAS CASITAS ---");
+        for (Jugador j : mesa.getListaJugadores()) {
+            if (j.getCasita().isEmpty()) {
+                System.out.println("Casita de " + j.getNombre() + ": Vacía (0 cartas)");
+            } else {
+                Cartas cartaTope = j.getCasita().get(j.getCasita().size() - 1);
+                System.out.println("-> Casita de " + j.getNombre() + ": [" + cartaTope + "] en el tope (Total: " + j.getCasita().size() + " cartas)");
+            }
+        }
+        System.out.println("-------------------------------------------------------");
+
+        //Mostramos las cartas del jugador
         System.out.println("Tus cartas disponibles son: ");
         for (int i = 0; i< mano.size(); i++){
             System.out.println(i + " - " + mano.get(i));
