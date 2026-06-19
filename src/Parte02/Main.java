@@ -1,7 +1,5 @@
 package Parte02;
-
 import Parte01.*;
-
 public class Main {
 
     public static void main(String[] args){
@@ -12,11 +10,11 @@ public class Main {
         Baraja baraja = new Baraja();
         //creacion de jugadores
         Jugador maxi = new Jugador("Maxi");
-        Jugador xavi = new Jugador("Xavi");
+        Jugador maisi = new Jugador("maisi");
 
         //ponemos jugadores en la mesa
         mesa.agregarJugador(maxi);
-        mesa.agregarJugador(xavi);
+        mesa.agregarJugador(maisi);
 
         //conectamos todo
         casitaRobada.setMesa(mesa);
@@ -25,6 +23,6 @@ public class Main {
         //arrancamos
         casitaRobada.mostrarJuego();
         System.out.println("Arranca la partidubi");
-        casitaRobada.jugar(4);
+        casitaRobada.jugar(10);
     }
 }
