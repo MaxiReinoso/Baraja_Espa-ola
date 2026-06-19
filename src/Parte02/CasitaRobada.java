@@ -45,7 +45,18 @@ public class CasitaRobada extends Juego{
                 this.turno(jugador);
             }
         }
-        System.out.println("\nPartida finalizada. ¡A contar las casitas!");}
+        this.ganador = this.elegirGanador(mesa);
+        System.out.println("EL GANADOR DE LA PARTIDA ES EL JUGADOR: " + this.ganador.getNombre());
+    }
+    public Jugador elegirGanador(Mesa mesa){
+        Jugador ganador = mesa.getListaJugadores().getFirst();
+        for (Jugador jugador: mesa.getListaJugadores()){
+            if (jugador.getCasita().size() > ganador.getCasita().size()){
+                ganador = jugador;
+            }
+        }
+        return ganador;
+    }
     public void turno(Jugador jugador) {
         ArrayList<Cartas> mano = jugador.mazo;
 

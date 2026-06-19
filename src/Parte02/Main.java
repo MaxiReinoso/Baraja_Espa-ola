@@ -23,6 +23,6 @@ public class Main {
         //arrancamos
         casitaRobada.mostrarJuego();
         System.out.println("Arranca la partidubi");
-        casitaRobada.jugar(10);
+        casitaRobada.jugar(2);
     }
 }
