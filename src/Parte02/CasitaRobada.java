@@ -17,6 +17,10 @@ public class CasitaRobada extends Juego{
             System.out.println("Necesita 2 o más jugadores para comenzar el juego.");
             return;
         }
+        //mezclamos la baraja
+        System.out.println("\n Mezclamos la baraja...");
+        this.baraja.barajar();
+        //reparto inicial
         for (int i = 0; i < 4; i++) {
             Cartas carta = baraja.sacarSiguiente();
             if (carta != null) {
